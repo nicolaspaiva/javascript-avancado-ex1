@@ -12,8 +12,8 @@
 <body class="container">
 
     <h1 class="text-center">Negociações</h1>
-
-    <form class="form">
+    <div id="mensagemView"></div>
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -43,28 +43,19 @@
     </div>
     <br>
     <br>
+    <div id="negociacoesView"></div>
 
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
-            </tr>
-        </thead>
-
-        <tbody>
-        </tbody>
-
-        <tfoot>
-        </tfoot>
-    </table>
     <script src="js/app/models/Negociacao.js"></script>
-    <script>
-        let n1 = new Negociacao(new Date(), 5, 700);
-        console.log(n1)
-    </script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/models/ListaNegociacoes.js"></script>
+    <script src="js/app/views/View.js"></script>
+    <script src="js/app/views/NegociacoesView.js"></script>
+    <script src="js/app/models/Mensagem.js"></script>
+    <script src="js/app/views/MesagemView.js"></script>
+    <Script>
+        let negociacaoController = new NegociacaoController();
+    </Script>
 </body>
 
 </html>
